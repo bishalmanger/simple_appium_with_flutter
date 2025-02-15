@@ -1,0 +1,480 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 13,
+    "passes": 0,
+    "pending": 0,
+    "failures": 13,
+    "start": "2025-02-15T04:09:07.430Z",
+    "end": "2025-02-15T04:12:12.213Z",
+    "duration": 184783,
+    "testsRegistered": 13,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "51acca14-1835-42b5-a0ff-6b1c02ffba46",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5a79b504-0a3c-4b82-9862-b319ad4e5733",
+          "title": "Integration Test: Login Flow",
+          "fullFile": "C:\\Appium_Roadmap_Practice\\Appium_Testing_Code\\tests\\integration\\loginFlowTest.test.js",
+          "file": "\\tests\\integration\\loginFlowTest.test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Integration Test: Login Flow\"",
+              "fullTitle": "Integration Test: Login Flow \"before all\" hook in \"Integration Test: Login Flow\"",
+              "timedOut": false,
+              "duration": 5236,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "test = new BaseTest();\nawait test.init(\"android\");\nloginPage = new LoginPage(test.driver);\nhomePage = new HomePage(test.driver);\nlogoutPage = new LogoutPage(test.driver);\nredirectLoginPage = new RedirectLoginPage(test.driver);",
+              "err": {},
+              "uuid": "f73afb1e-18bc-45c5-8724-40cbd7ae47ed",
+              "parentUUID": "5a79b504-0a3c-4b82-9862-b319ad4e5733",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Integration Test: Login Flow\"",
+              "fullTitle": "Integration Test: Login Flow \"after all\" hook in \"Integration Test: Login Flow\"",
+              "timedOut": false,
+              "duration": 166,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await test.tearDown();",
+              "err": {},
+              "uuid": "1f8dd9f3-9ef9-4deb-98c1-c749df7e4c06",
+              "parentUUID": "5a79b504-0a3c-4b82-9862-b319ad4e5733",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "should login first successfully with valid credentials",
+              "fullTitle": "Integration Test: Login Flow should login first successfully with valid credentials",
+              "timedOut": true,
+              "duration": 30013,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await loginPage.login(loginData.valid.emailid, loginData.valid.password);\nconst displayed = await homePage.isDisplayed();\nconsole.log(\"home page displayed\",displayed);\nexpect(displayed).to.be.true;",
+              "err": {
+                "message": "Error: Timeout of 30000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Appium_Roadmap_Practice\\Appium_Testing_Code\\tests\\integration\\loginFlowTest.test.js)",
+                "estack": "Error: Timeout of 30000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Appium_Roadmap_Practice\\Appium_Testing_Code\\tests\\integration\\loginFlowTest.test.js)\n    at listOnTimeout (node:internal/timers:594:17)\n    at process.processTimers (node:internal/timers:529:7)",
+                "diff": null
+              },
+              "uuid": "22a67115-f386-499b-9173-192420299411",
+              "parentUUID": "5a79b504-0a3c-4b82-9862-b319ad4e5733",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should logout",
+              "fullTitle": "Integration Test: Login Flow Should logout",
+              "timedOut": true,
+              "duration": 30009,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await logoutPage.LogoutPageFun();\nconst logstatus = await redirectLoginPage.displayLoginPageFun();\nexpect(logstatus).to.be.true;",
+              "err": {
+                "message": "Error: Timeout of 30000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Appium_Roadmap_Practice\\Appium_Testing_Code\\tests\\integration\\loginFlowTest.test.js)",
+                "estack": "Error: Timeout of 30000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Appium_Roadmap_Practice\\Appium_Testing_Code\\tests\\integration\\loginFlowTest.test.js)\n    at listOnTimeout (node:internal/timers:594:17)\n    at process.processTimers (node:internal/timers:529:7)",
+                "diff": null
+              },
+              "uuid": "5bd42b03-1729-47a1-860b-37cfa6de6b30",
+              "parentUUID": "5a79b504-0a3c-4b82-9862-b319ad4e5733",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should not login with invalid credentials",
+              "fullTitle": "Integration Test: Login Flow should not login with invalid credentials",
+              "timedOut": true,
+              "duration": 30006,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await loginPage.login(loginData.invalid.emailid, loginData.invalid.password);\nexpect(await test.driver.getElementText(await loginPage.loginStatus)).to.equal('failed');\nconsole.log(await loginPage.logstatus);",
+              "err": {
+                "message": "Error: Timeout of 30000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Appium_Roadmap_Practice\\Appium_Testing_Code\\tests\\integration\\loginFlowTest.test.js)",
+                "estack": "Error: Timeout of 30000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Appium_Roadmap_Practice\\Appium_Testing_Code\\tests\\integration\\loginFlowTest.test.js)\n    at listOnTimeout (node:internal/timers:594:17)\n    at process.processTimers (node:internal/timers:529:7)",
+                "diff": null
+              },
+              "uuid": "48b2223e-1243-4ff8-abf9-02e492a65a05",
+              "parentUUID": "5a79b504-0a3c-4b82-9862-b319ad4e5733",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should login Second successfully with valid credentials",
+              "fullTitle": "Integration Test: Login Flow should login Second successfully with valid credentials",
+              "timedOut": true,
+              "duration": 30014,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await loginPage.login(loginData.valid.emailid, loginData.valid.password);\nconst displayed = await homePage.isDisplayed();\nconsole.log(\"home page displayed\",displayed);\nexpect(displayed).to.be.true;",
+              "err": {
+                "message": "Error: Timeout of 30000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Appium_Roadmap_Practice\\Appium_Testing_Code\\tests\\integration\\loginFlowTest.test.js)",
+                "estack": "Error: Timeout of 30000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Appium_Roadmap_Practice\\Appium_Testing_Code\\tests\\integration\\loginFlowTest.test.js)\n    at listOnTimeout (node:internal/timers:594:17)\n    at process.processTimers (node:internal/timers:529:7)",
+                "diff": null
+              },
+              "uuid": "bbcd0c70-cd92-4c50-b1e0-93391154d25c",
+              "parentUUID": "5a79b504-0a3c-4b82-9862-b319ad4e5733",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "22a67115-f386-499b-9173-192420299411",
+            "5bd42b03-1729-47a1-860b-37cfa6de6b30",
+            "48b2223e-1243-4ff8-abf9-02e492a65a05",
+            "bbcd0c70-cd92-4c50-b1e0-93391154d25c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 120042,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 30000
+        },
+        {
+          "uuid": "d1cdd23c-8ecc-4130-ade0-05fd8f8e130d",
+          "title": "Integration Test: Order Placement Flow",
+          "fullFile": "C:\\Appium_Roadmap_Practice\\Appium_Testing_Code\\tests\\integration\\orderPlacementTest.test.js",
+          "file": "\\tests\\integration\\orderPlacementTest.test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Integration Test: Order Placement Flow\"",
+              "fullTitle": "Integration Test: Order Placement Flow \"before all\" hook in \"Integration Test: Order Placement Flow\"",
+              "timedOut": false,
+              "duration": 3617,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "test = new BaseTest();\nawait test.init(\"android\");\nhomePage = new HomePage(test.driver);\nrestaurantPage = new RestaurantPage(test.driver);\ncartPage = new CartPage(test.driver);",
+              "err": {},
+              "uuid": "456de6aa-ceb9-400a-9a23-f2d1869f5858",
+              "parentUUID": "d1cdd23c-8ecc-4130-ade0-05fd8f8e130d",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook for \"Should close the Pop up KFC menu\"",
+              "fullTitle": "Integration Test: Order Placement Flow \"after all\" hook for \"Should close the Pop up KFC menu\"",
+              "timedOut": false,
+              "duration": 1571,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await test.tearDown();",
+              "err": {
+                "message": "invalid session id: WebDriverError: A session is either terminated or not started when running \"http://127.0.0.1:4723/session/8a1e78ff-7474-4515-beaa-1f051be94efe\" with method \"DELETE\"",
+                "estack": "invalid session id: WebDriverError: A session is either terminated or not started when running \"http://127.0.0.1:4723/session/8a1e78ff-7474-4515-beaa-1f051be94efe\" with method \"DELETE\"\n    at FetchRequest._request (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/webdriver/build/node.js:1700:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async Browser.wrapCommandFn (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/@wdio/utils/build/index.js:893:23)\n    at async BaseTest.tearDown (baseTest.js:24:13)\n    at async Context.<anonymous> (tests\\integration\\orderPlacementTest.test.js:73:5)",
+                "diff": null
+              },
+              "uuid": "ba4423f1-cd20-4413-a830-cbc3c1f8a13a",
+              "parentUUID": "d1cdd23c-8ecc-4130-ade0-05fd8f8e130d",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Should Navigate to the restaurant Page",
+              "fullTitle": "Integration Test: Order Placement Flow Should Navigate to the restaurant Page",
+              "timedOut": false,
+              "duration": 41760,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await restaurantPage.getRestaurantName();\nconst restDisplay = await restaurantPage.naviagetfun();\nexpect(restDisplay).to.be.true;",
+              "err": {
+                "message": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"element/eyJmaW5kZXJUeXBlIjoiQnlWYWx1ZUtleSIsImtleVZhbHVlU3RyaW5nIjoicmVzdGF1cmFudExpc3QiLCJrZXlWYWx1ZVR5cGUiOiJTdHJpbmcifQ/text\" with method \"GET\"",
+                "estack": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"element/eyJmaW5kZXJUeXBlIjoiQnlWYWx1ZUtleSIsImtleVZhbHVlU3RyaW5nIjoicmVzdGF1cmFudExpc3QiLCJrZXlWYWx1ZVR5cGUiOiJTdHJpbmcifQ/text\" with method \"GET\"\n    at FetchRequest._libRequest (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/webdriver/build/node.js:1655:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async FetchRequest._request (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/webdriver/build/node.js:1665:20)\n    at async Browser.wrapCommandFn (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/@wdio/utils/build/index.js:893:23)\n    at async RestaurantPage.naviagetfun (helpers\\pageObjects\\restaurantPage.js:56:32)\n    at async Context.<anonymous> (tests\\integration\\orderPlacementTest.test.js:24:25)",
+                "diff": null
+              },
+              "uuid": "cf6e31ac-d8ae-4dda-96f9-d3dab86a0963",
+              "parentUUID": "d1cdd23c-8ecc-4130-ade0-05fd8f8e130d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should tab to the HotLix and Show HotLix menu",
+              "fullTitle": "Integration Test: Order Placement Flow Should tab to the HotLix and Show HotLix menu",
+              "timedOut": false,
+              "duration": 1534,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await restaurantPage.tabHotLixFun();\nconst status = await restaurantPage.getHotlixCompNab();\nexpect(status).to.be.true;",
+              "err": {
+                "message": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"element/eyJmaW5kZXJUeXBlIjoiQnlWYWx1ZUtleSIsImtleVZhbHVlU3RyaW5nIjowLCJrZXlWYWx1ZVR5cGUiOiJpbnQifQ/click\" with method \"POST\"",
+                "estack": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"element/eyJmaW5kZXJUeXBlIjoiQnlWYWx1ZUtleSIsImtleVZhbHVlU3RyaW5nIjowLCJrZXlWYWx1ZVR5cGUiOiJpbnQifQ/click\" with method \"POST\"\n    at FetchRequest._libRequest (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/webdriver/build/node.js:1655:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async FetchRequest._request (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/webdriver/build/node.js:1665:20)\n    at async Browser.wrapCommandFn (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/@wdio/utils/build/index.js:893:23)\n    at async RestaurantPage.tabHotLixFun (helpers\\pageObjects\\restaurantPage.js:81:9)\n    at async Context.<anonymous> (tests\\integration\\orderPlacementTest.test.js:30:6)",
+                "diff": null
+              },
+              "uuid": "2d3a9d77-2a75-4905-b4c7-47a648f58596",
+              "parentUUID": "d1cdd23c-8ecc-4130-ade0-05fd8f8e130d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should close the Pop up HotLix menu",
+              "fullTitle": "Integration Test: Order Placement Flow Should close the Pop up HotLix menu",
+              "timedOut": false,
+              "duration": 1537,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await restaurantPage.closePopUpFun();",
+              "err": {
+                "message": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"element/eyJmaW5kZXJUeXBlIjoiQnlWYWx1ZUtleSIsImtleVZhbHVlU3RyaW5nIjoib2siLCJrZXlWYWx1ZVR5cGUiOiJTdHJpbmcifQ/click\" with method \"POST\"",
+                "estack": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"element/eyJmaW5kZXJUeXBlIjoiQnlWYWx1ZUtleSIsImtleVZhbHVlU3RyaW5nIjoib2siLCJrZXlWYWx1ZVR5cGUiOiJTdHJpbmcifQ/click\" with method \"POST\"\n    at FetchRequest._libRequest (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/webdriver/build/node.js:1655:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async FetchRequest._request (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/webdriver/build/node.js:1665:20)\n    at async Browser.wrapCommandFn (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/@wdio/utils/build/index.js:893:23)\n    at async RestaurantPage.closePopUpFun (helpers\\pageObjects\\restaurantPage.js:100:9)\n    at async Context.<anonymous> (tests\\integration\\orderPlacementTest.test.js:35:3)",
+                "diff": null
+              },
+              "uuid": "3f70ed3a-2855-4ae9-b7d1-0f0dfdedc6ba",
+              "parentUUID": "d1cdd23c-8ecc-4130-ade0-05fd8f8e130d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should tab to the Dominos and Show Dominos menu",
+              "fullTitle": "Integration Test: Order Placement Flow Should tab to the Dominos and Show Dominos menu",
+              "timedOut": false,
+              "duration": 1527,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await restaurantPage.tabHotLixFun();\nconst status = await restaurantPage.getHotlixCompNab();\nexpect(status).to.be.true;",
+              "err": {
+                "message": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"element/eyJmaW5kZXJUeXBlIjoiQnlWYWx1ZUtleSIsImtleVZhbHVlU3RyaW5nIjowLCJrZXlWYWx1ZVR5cGUiOiJpbnQifQ/click\" with method \"POST\"",
+                "estack": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"element/eyJmaW5kZXJUeXBlIjoiQnlWYWx1ZUtleSIsImtleVZhbHVlU3RyaW5nIjowLCJrZXlWYWx1ZVR5cGUiOiJpbnQifQ/click\" with method \"POST\"\n    at FetchRequest._libRequest (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/webdriver/build/node.js:1655:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async FetchRequest._request (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/webdriver/build/node.js:1665:20)\n    at async Browser.wrapCommandFn (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/@wdio/utils/build/index.js:893:23)\n    at async RestaurantPage.tabHotLixFun (helpers\\pageObjects\\restaurantPage.js:81:9)\n    at async Context.<anonymous> (tests\\integration\\orderPlacementTest.test.js:41:3)",
+                "diff": null
+              },
+              "uuid": "1e0c6702-ab83-42ea-af9f-ddd8fbd8058e",
+              "parentUUID": "d1cdd23c-8ecc-4130-ade0-05fd8f8e130d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should close the Pop up Dominos menu",
+              "fullTitle": "Integration Test: Order Placement Flow Should close the Pop up Dominos menu",
+              "timedOut": false,
+              "duration": 1531,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await restaurantPage.closePopUpFun();",
+              "err": {
+                "message": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"element/eyJmaW5kZXJUeXBlIjoiQnlWYWx1ZUtleSIsImtleVZhbHVlU3RyaW5nIjoib2siLCJrZXlWYWx1ZVR5cGUiOiJTdHJpbmcifQ/click\" with method \"POST\"",
+                "estack": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"element/eyJmaW5kZXJUeXBlIjoiQnlWYWx1ZUtleSIsImtleVZhbHVlU3RyaW5nIjoib2siLCJrZXlWYWx1ZVR5cGUiOiJTdHJpbmcifQ/click\" with method \"POST\"\n    at FetchRequest._libRequest (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/webdriver/build/node.js:1655:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async FetchRequest._request (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/webdriver/build/node.js:1665:20)\n    at async Browser.wrapCommandFn (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/@wdio/utils/build/index.js:893:23)\n    at async RestaurantPage.closePopUpFun (helpers\\pageObjects\\restaurantPage.js:100:9)\n    at async Context.<anonymous> (tests\\integration\\orderPlacementTest.test.js:47:1)",
+                "diff": null
+              },
+              "uuid": "4150bfce-f625-46c1-805c-3b11c92314a2",
+              "parentUUID": "d1cdd23c-8ecc-4130-ade0-05fd8f8e130d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should tab to the Zomato and Show Zomato menu",
+              "fullTitle": "Integration Test: Order Placement Flow Should tab to the Zomato and Show Zomato menu",
+              "timedOut": false,
+              "duration": 1530,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await restaurantPage.tabHotLixFun();\nconst status = await restaurantPage.getHotlixCompNab();\nexpect(status).to.be.true;",
+              "err": {
+                "message": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"element/eyJmaW5kZXJUeXBlIjoiQnlWYWx1ZUtleSIsImtleVZhbHVlU3RyaW5nIjowLCJrZXlWYWx1ZVR5cGUiOiJpbnQifQ/click\" with method \"POST\"",
+                "estack": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"element/eyJmaW5kZXJUeXBlIjoiQnlWYWx1ZUtleSIsImtleVZhbHVlU3RyaW5nIjowLCJrZXlWYWx1ZVR5cGUiOiJpbnQifQ/click\" with method \"POST\"\n    at FetchRequest._libRequest (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/webdriver/build/node.js:1655:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async FetchRequest._request (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/webdriver/build/node.js:1665:20)\n    at async Browser.wrapCommandFn (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/@wdio/utils/build/index.js:893:23)\n    at async RestaurantPage.tabHotLixFun (helpers\\pageObjects\\restaurantPage.js:81:9)\n    at async Context.<anonymous> (tests\\integration\\orderPlacementTest.test.js:53:3)",
+                "diff": null
+              },
+              "uuid": "5a65cc28-ff48-4680-ae29-e9567d940404",
+              "parentUUID": "d1cdd23c-8ecc-4130-ade0-05fd8f8e130d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should close the Pop up Zomato menu",
+              "fullTitle": "Integration Test: Order Placement Flow Should close the Pop up Zomato menu",
+              "timedOut": false,
+              "duration": 1550,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await restaurantPage.closePopUpFun();",
+              "err": {
+                "message": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"element/eyJmaW5kZXJUeXBlIjoiQnlWYWx1ZUtleSIsImtleVZhbHVlU3RyaW5nIjoib2siLCJrZXlWYWx1ZVR5cGUiOiJTdHJpbmcifQ/click\" with method \"POST\"",
+                "estack": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"element/eyJmaW5kZXJUeXBlIjoiQnlWYWx1ZUtleSIsImtleVZhbHVlU3RyaW5nIjoib2siLCJrZXlWYWx1ZVR5cGUiOiJTdHJpbmcifQ/click\" with method \"POST\"\n    at FetchRequest._libRequest (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/webdriver/build/node.js:1655:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async FetchRequest._request (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/webdriver/build/node.js:1665:20)\n    at async Browser.wrapCommandFn (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/@wdio/utils/build/index.js:893:23)\n    at async RestaurantPage.closePopUpFun (helpers\\pageObjects\\restaurantPage.js:100:9)\n    at async Context.<anonymous> (tests\\integration\\orderPlacementTest.test.js:59:1)",
+                "diff": null
+              },
+              "uuid": "f319e8c8-2686-4767-918a-86d2d9e9c39b",
+              "parentUUID": "d1cdd23c-8ecc-4130-ade0-05fd8f8e130d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should tab to the KFC and Show KFC menu",
+              "fullTitle": "Integration Test: Order Placement Flow Should tab to the KFC and Show KFC menu",
+              "timedOut": false,
+              "duration": 1576,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await restaurantPage.tabHotLixFun();\nconst status = await restaurantPage.getHotlixCompNab();\nexpect(status).to.be.true;",
+              "err": {
+                "message": "invalid session id: WebDriverError: A session is either terminated or not started when running \"element/eyJmaW5kZXJUeXBlIjoiQnlWYWx1ZUtleSIsImtleVZhbHVlU3RyaW5nIjowLCJrZXlWYWx1ZVR5cGUiOiJpbnQifQ/click\" with method \"POST\"",
+                "estack": "invalid session id: WebDriverError: A session is either terminated or not started when running \"element/eyJmaW5kZXJUeXBlIjoiQnlWYWx1ZUtleSIsImtleVZhbHVlU3RyaW5nIjowLCJrZXlWYWx1ZVR5cGUiOiJpbnQifQ/click\" with method \"POST\"\n    at FetchRequest._request (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/webdriver/build/node.js:1700:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async Browser.wrapCommandFn (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/@wdio/utils/build/index.js:893:23)\n    at async RestaurantPage.tabHotLixFun (helpers\\pageObjects\\restaurantPage.js:81:9)\n    at async Context.<anonymous> (tests\\integration\\orderPlacementTest.test.js:64:3)",
+                "diff": null
+              },
+              "uuid": "544c0396-24a1-4933-9fd5-60727b1d79b3",
+              "parentUUID": "d1cdd23c-8ecc-4130-ade0-05fd8f8e130d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should close the Pop up KFC menu",
+              "fullTitle": "Integration Test: Order Placement Flow Should close the Pop up KFC menu",
+              "timedOut": false,
+              "duration": 1572,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await restaurantPage.closePopUpFun();",
+              "err": {
+                "message": "invalid session id: WebDriverError: A session is either terminated or not started when running \"element/eyJmaW5kZXJUeXBlIjoiQnlWYWx1ZUtleSIsImtleVZhbHVlU3RyaW5nIjoib2siLCJrZXlWYWx1ZVR5cGUiOiJTdHJpbmcifQ/click\" with method \"POST\"",
+                "estack": "invalid session id: WebDriverError: A session is either terminated or not started when running \"element/eyJmaW5kZXJUeXBlIjoiQnlWYWx1ZUtleSIsImtleVZhbHVlU3RyaW5nIjoib2siLCJrZXlWYWx1ZVR5cGUiOiJTdHJpbmcifQ/click\" with method \"POST\"\n    at FetchRequest._request (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/webdriver/build/node.js:1700:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async Browser.wrapCommandFn (file:///C:/Appium_Roadmap_Practice/Appium_Testing_Code/node_modules/@wdio/utils/build/index.js:893:23)\n    at async RestaurantPage.closePopUpFun (helpers\\pageObjects\\restaurantPage.js:100:9)\n    at async Context.<anonymous> (tests\\integration\\orderPlacementTest.test.js:70:1)",
+                "diff": null
+              },
+              "uuid": "ea25b3e5-ad6a-40bf-83da-7c439f479dc3",
+              "parentUUID": "d1cdd23c-8ecc-4130-ade0-05fd8f8e130d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "cf6e31ac-d8ae-4dda-96f9-d3dab86a0963",
+            "2d3a9d77-2a75-4905-b4c7-47a648f58596",
+            "3f70ed3a-2855-4ae9-b7d1-0f0dfdedc6ba",
+            "1e0c6702-ab83-42ea-af9f-ddd8fbd8058e",
+            "4150bfce-f625-46c1-805c-3b11c92314a2",
+            "5a65cc28-ff48-4680-ae29-e9567d940404",
+            "f319e8c8-2686-4767-918a-86d2d9e9c39b",
+            "544c0396-24a1-4933-9fd5-60727b1d79b3",
+            "ea25b3e5-ad6a-40bf-83da-7c439f479dc3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 54117,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 50000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.1.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

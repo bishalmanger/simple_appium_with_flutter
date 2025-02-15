@@ -1,0 +1,31 @@
+{
+ "version": "1.0.0",
+ "main": "index.js",
+ "dependencies": {
+  "appium": "^2.15.0",
+  "appium-flutter-finder": "^0.2.0",
+  "appium-wait-plugin": "^3.0.2",
+  "chai": "^5.1.2",
+  "js": "^0.1.0",
+  "mocha": "^11.1.0"
+ },
+ "scripts": {
+  "integration_test": "mocha --reporter mochawesome tests/integration/**/*.test.js",
+  "open_report": "open mochawesome-report/mochawesome.html",
+  "test_with_report": "npm run integration_test && npm run open_report",
+  "unit_login_test": "mocha tests/integration/loginFlowTest.test.js",
+  "unit_restaurant_test": "mocha tests/integration/orderPlacementTest.test.js",
+  "jsonRead": "mocha tests/integration/testJsonRead.js",
+  "generateReport": "mocha --reporter mochawesome --timeout 30000"
+ },
+ "author": "BishalMagar",
+ "private": true,
+ "license": "NETSPEQ Solution",
+ "description": "",
+ "devDependencies": {
+  "fs": "^0.0.1-security",
+  "mochawesome": "^7.1.3",
+  "open": "^10.1.0",
+  "webdriverio": "^9.7.2"
+ }
+}

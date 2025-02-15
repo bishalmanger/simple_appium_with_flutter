@@ -1,0 +1,63 @@
+[
+  {
+    "restaurant_name": "HotLix",
+    "restaurant_logo": "https://cdn11.bigcommerce.com/s-ldfio/images/stencil/1920w/o/hotlix-logo_1525035718__13824.original.png",
+    "menu": [
+      "Pizza",
+      "Burger",
+      "Cake",
+      "Momo",
+      "Biryani",
+      "Rolls",
+      "Pasta",
+      "Coffee",
+      "Pure Veg"
+    ]
+  },
+  {
+    "restaurant_name": "Dominos",
+    "restaurant_logo": "https://1000logos.net/wp-content/uploads/2021/01/Dominos-logo.jpg",
+    "menu": [
+      "Indian Tandoori Chicken Roll",
+      "Classic Chicken Roll & Pepsi Combo",
+      "Korean Tangy Chicken Roll",
+      "Classic Chicken Roll Meal for 2",
+      "2 Double Chicken Roll",
+      "Double Down",
+      "Mexican Zinger Pro Burger",
+      "Mixed Zinger Doubles",
+      "Buddy Meal"
+    ]
+  },
+  {
+     "restaurant_name": "Zomato",
+     "restaurant_logo": "https://www.citypng.com/public/uploads/preview/zomato-round-logo-icon-701751694968327lvye6zxamg.png",
+     "menu": [
+      "Chicken Golden Delight",
+      "Non Veg Supreme",
+      "Chicken Dominator",
+      "PEPPER BARBECUE & ONION",
+      "Biryani",
+      "CHICKEN SAUSAGE",
+      "India Chicken Tikka",
+      "CChicken Pepperoni",
+      "Keema Do Pyaza"
+    ]
+  },
+  {
+     "restaurant_name": "KFC",
+     "restaurant_logo": "https://icons.veryicon.com/png/o/brands/trademark/kfc-1.png",
+    "menu": [
+      "Indian Tandoori Chicken Roll",
+      "Classic Chicken Roll & Pepsi Combo",
+      "Korean Tangy Chicken Roll",
+      "Classic Chicken Roll Meal for 2",
+      "2 Double Chicken Roll",
+      "Double Down",
+      "Mexican Zinger Pro Burger",
+      "Mixed Zinger Doubles",
+      "Buddy Meal"
+    ]
+  }
+
+]

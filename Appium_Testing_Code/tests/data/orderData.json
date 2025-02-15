@@ -1,0 +1,8 @@
+{
+    "order1": {
+      "restaurant": "Pizzeria",
+      "items": ["Margherita Pizza", "Garlic Bread"],
+      "promoCode": "SAVE10",
+      "invalidPromo": "BADCODE"
+    }
+  }

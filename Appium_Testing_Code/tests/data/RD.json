@@ -1,0 +1,22 @@
+[
+    {
+        "restaurantId": 0,
+        "restaurantName": "HotLix Menu List"
+    },
+    {
+        "restaurantId": 1,
+        "restaurantName": "Dominos Menu List"
+    },
+    {
+        "restaurantId": 2,
+        "restaurantName": "Zomato Menu List"
+    },
+    {
+        "restaurantId": 3,
+        "restaurantName": "KFC Menu List"
+    },
+    {
+        "restaurantId": 4,
+        "restaurantName": "Zomato Menu List"
+    }
+]

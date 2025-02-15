@@ -1,0 +1,11 @@
+{
+    "valid": {
+      "emailid": "bishalmanger121@gmail.com",
+      "password": "password123@"
+    },
+    
+  "invalid": {
+    "emailid": "bademailid.com",
+    "password": "wrongPassword"
+  }
+  }
